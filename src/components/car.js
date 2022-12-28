@@ -1,14 +1,20 @@
 import React from 'react'
-import { ReactDOM } from 'react';
 
-function Car(props){
-    return (
-        <div>
-            <h1>Hi, I am a {props.color} color car</h1>
+class Car extends React.Component {
+    constructor(props) {
+            super(props);
+            this.state = {
+                color: 'red',
 
-        </div>
-    );
+            }}
 
+            render(){
+                return (<>
+                <h1>I am a {this.state.color} color car from class component</h1></>)
+            }
+           
+
+           
 }
 
 export default Car;
