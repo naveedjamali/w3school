@@ -4,19 +4,21 @@ class Car extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      brand: "Ford",
+      
       color: "red",
-      model: "Mustang",
-      year: 1964,
+     
     };
+  }
+
+  shouldComponentUpdate(){
+    return false;
   }
 
   changeColor = ()=> {
     this.setState({ color: this.state.color=== "Green"?'Red':'Green' });
   }
-  componentDidMount(){
-setTimeout(()=>this.setState({color:'Yellow'}),2000);
-  }
+  
+
   render() {
     return (
       <>
