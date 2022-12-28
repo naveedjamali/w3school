@@ -6,39 +6,25 @@ class Car extends React.Component {
     
         this.state = {favoritecolor: "red"};  
   }
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({favoritecolor: "yellow"})
-    }, 1000)
-  }
+ 
 
   changeColor = () => {
-    this.setState({ color: this.state.favoritecolor === "red" ? "Green" : "red" });
+    setTimeout(() => {
+        this.setState({ color: this.state.favoritecolor === "red" ? "Green" : "red" })
+    }, 1000);;
   };
 
-  getSnapshotBeforeUpdate(prevProps, prevStat){
 
-    document.getElementById('div1').innerHTML = `Before update, the color was ${prevStat.favoritecolor}`;
-    return true;
-
-  }
 
   componentDidUpdate() {
-    
-    document.getElementById('div2').innerHTML = `After update, the color is ${this.state.favoritecolor}`;
-    return true;
+    this.changeColor();
   }
 
   render() {
     return (
       <>
         <h1>I am a {this.state.favoritecolor} color car from class component</h1>
-        <button onClick={this.changeColor}>
-          {" "}
-          Make it {this.state.favoritecolor === "Red" ? "Green" : "Red"}
-        </button>
-        <div id="div1" />
-        <div id="div2"/>
+        
       </>
     );
   }
