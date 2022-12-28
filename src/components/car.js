@@ -3,27 +3,42 @@ import React from "react";
 class Car extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      color: "red",
-    };
+    
+        this.state = {favoritecolor: "red"};  
   }
-
-  shouldComponentUpdate() {
-    return false;
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
   }
 
   changeColor = () => {
-    this.setState({ color: this.state.color === "red" ? "Green" : "red" });
+    this.setState({ color: this.state.favoritecolor === "red" ? "Green" : "red" });
   };
+
+  getSnapshotBeforeUpdate(prevProps, prevStat){
+
+    document.getElementById('div1').innerHTML = `Before update, the color was ${prevStat.favoritecolor}`;
+    return true;
+
+  }
+
+  componentDidUpdate() {
+    
+    document.getElementById('div2').innerHTML = `After update, the color is ${this.state.favoritecolor}`;
+    return true;
+  }
 
   render() {
     return (
       <>
-        <h1>I am a {this.state.color} color car from class component</h1>
+        <h1>I am a {this.state.favoritecolor} color car from class component</h1>
         <button onClick={this.changeColor}>
           {" "}
-          Make it {this.state.color === "Red" ? "Green" : "Red"}
+          Make it {this.state.favoritecolor === "Red" ? "Green" : "Red"}
         </button>
+        <div id="div1" />
+        <div id="div2"/>
       </>
     );
   }
