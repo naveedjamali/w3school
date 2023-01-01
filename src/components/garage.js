@@ -2,9 +2,15 @@ import React from "react";
 import Car from "./car";
 
 function Garage(props){
+    const cars = props.cars;
+    
     return (<>
-    <h1>This is my garage, which is located at {props.location}</h1>
-    <Car color='Pink' /></>);
+    <h1>Garage</h1>
+    {
+        cars.length>0 && <h2>You have {cars.length} cars in your garage</h2>
+
+
+    }</>);
 } 
 
 

@@ -4,26 +4,31 @@ class Car extends React.Component {
   constructor(props) {
     super(props);
     
-        this.state = {favoritecolor: "red"};  
+        this.state = {favoritecolor: props.favoritecolor};  
   }
  
 
   changeColor = () => {
     setTimeout(() => {
-        this.setState({ color: this.state.favoritecolor === "red" ? "Green" : "red" })
+        this.setState({ favoriteColor: this.state.favoritecolor === "red" ? "Green" : "red" })
     }, 1000);;
   };
 
 
 
+  componentDidMount(){
+    this.changeColor();
+  }
   componentDidUpdate() {
     this.changeColor();
   }
 
+  
+
   render() {
     return (
       <>
-        <h1>I am a {this.state.favoritecolor} color car from class component</h1>
+        <h1>I am a {this.state.favoriteColor} color car from class component</h1>
         
       </>
     );

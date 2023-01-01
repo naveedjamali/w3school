@@ -3,9 +3,11 @@ import {Garage} from './components/garage'
 
 function App() {
  
+  const cars = ['Volvo', 'BMW', 'Audi', 'Mercedes', 'BMW'];
+
   return (
     <div className="App">
-      <Garage location='Islamabad'/>
+      <Garage cars={cars}/>
     </div>
   );
 }
