@@ -1,5 +1,5 @@
 import './App.css';
-import {Garage} from './components/garage'
+import Goal, {Garage} from './components/garage'
 
 function App() {
  
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Garage cars={cars}/>
+      <Goal isGoal={false} />
     </div>
   );
 }

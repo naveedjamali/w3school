@@ -1,17 +1,21 @@
-import React from "react";
-import Car from "./car";
+import React from 'react';
 
-function Garage(props){
-    const cars = props.cars;
+function MadeGoal(props){
+    return (<><h1>GOAL!!!!!</h1></>)
+}
+
+function MissedGoal(props){
+    return (<><h1>MISSED GOAL!!!!!</h1></>)
+
+}
+function Goal(props){
+    const isGoal = props.isGoal;
+    return(<>
     
-    return (<>
-    <h1>Garage</h1>
-    {
-        cars.length>0 && <h2>You have {cars.length} cars in your garage</h2>
+    {isGoal ?<MadeGoal></MadeGoal>:<MissedGoal></MissedGoal>}
+    
+    </>);
 
+}
 
-    }</>);
-} 
-
-
-export {Garage};
+export default Goal;
