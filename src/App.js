@@ -1,13 +1,11 @@
 import './App.css';
-import Goal, {Garage} from './components/garage'
+import Garage from './components/garage'
 
 function App() {
  
-  const cars = ['Volvo', 'BMW', 'Audi', 'Mercedes', 'BMW'];
-
   return (
     <div className="App">
-      <Goal isGoal={false} />
+      <Garage></Garage>
     </div>
   );
 }

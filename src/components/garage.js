@@ -1,21 +1,26 @@
-import React from 'react';
+import React from "react";
+import { Car } from "./car";
 
-function MadeGoal(props){
-    return (<><h1>GOAL!!!!!</h1></>)
+function Garage() {
+  const cars = [
+    { key: 0, brand: "SUV" },
+    { key: 1, brand: "TOYOTA" },
+    { key: 2, brand: "HONDA" },
+  ];
+
+  return (
+    <>
+    <h1>Who lives in my Garage</h1>
+      {cars.length > 0 ? (
+        
+        <ol>
+       { cars.map((car) => <Car key={car.key} brand={car.brand}/>)}
+       </ol>
+      ) : (
+        <h2>No Cars found</h2>
+      )}
+    </>
+  );
 }
 
-function MissedGoal(props){
-    return (<><h1>MISSED GOAL!!!!!</h1></>)
-
-}
-function Goal(props){
-    const isGoal = props.isGoal;
-    return(<>
-    
-    {isGoal ?<MadeGoal></MadeGoal>:<MissedGoal></MissedGoal>}
-    
-    </>);
-
-}
-
-export default Goal;
+export default Garage;
