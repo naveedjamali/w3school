@@ -1,12 +1,12 @@
 import './App.css';
-import Garage from './components/garage'
+import MyForm from './components/form';
 
 function App() {
  
   return (
     <div className="App">
-      <Garage></Garage>
-    </div>
+<MyForm></MyForm>
+      </div>
   );
 }
 
