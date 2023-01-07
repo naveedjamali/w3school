@@ -7,8 +7,8 @@ export default function MyForm(props) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-
-    setInputs((values) => ({ ...values, [name]: value }));
+    const newValues = (values) => ({ ...values, [name]: value })
+    setInputs(newValues);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
