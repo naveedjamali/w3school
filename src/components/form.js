@@ -2,42 +2,22 @@ import React from "react";
 import { useState } from "react";
 
 export default function MyForm(props) {
-  const [inputs, setInputs] = useState({});
+    const [myCar, setMyCar] = useState("VOLVO");
+    
+    const handleCar = (event)=>setMyCar(event.target.value);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    const newValues = (values) => ({ ...values, [name]: value })
-    setInputs(newValues);
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs);
-  };
-
-  return (
+    return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Enter your name:
-          <input
-            type="text"
-            name="username"
-            value={inputs.username || ""}
-            onChange={handleChange}
-          ></input>
-        </label>
-        <label>
-          Enter your age:{" "}
-          <input
-            type="number"
-            name="age"
-            value={inputs.age || ""}
-            onChange={handleChange}
-          ></input>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    </>
-  );
+    <form>
+        <select value={myCar} onChange={handleCar} >
+            <option value="FORD">FORD</option>
+            <option value="VOLVO">VOLVO</option>
+            <option value="TOYOTA">TOYOTA</option>
+        </select>
+        </form>
+
+        <h1>{myCar}</h1>
+
+        </>  
+        );
 }
