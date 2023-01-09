@@ -1,22 +1,24 @@
+import { useState } from "react";
 import { ReactDOM } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blog";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
+import Todo from "./todo";
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+const App = () => {
+  const [count,setCount] = useState(0);
+  const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+
+  const increment = ()=>{
+    setCount((c)=>c+1);
+  };
+  return <>
+  <Todo todos={todos}/>
+  <hr/>
+  <div>
+    Count: {count}
+    <button onClick={increment}>+</button>
+  </div>
+  
+  </>;
+};
+
+
+export default App;
