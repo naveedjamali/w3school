@@ -5,7 +5,6 @@ const Todo = ({ todos }) => {
   const myStyle = {
     color: "green",
     backgroundColor: "yellow",
-    fontFamily: "Helvetica",
     fontSize: "50px",
     padding: "50px",
     margin:"20px",

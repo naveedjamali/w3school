@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import style from './css/car-style.module.css'
 
 export default function MyForm(props) {
     const [myCar, setMyCar] = useState("VOLVO");
@@ -8,6 +9,7 @@ export default function MyForm(props) {
 
     return (
     <>
+    <h1 style={style.blueText}>My Car Selection Form</h1>
     <form>
         <select value={myCar} onChange={handleCar} >
             <option value="FORD">FORD</option>
