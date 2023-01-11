@@ -1,10 +1,7 @@
-import React from "react";
+import st from './car-style.module.css'
 
-export function Car(props) {
-  return (
-    <>
-      <li>I am a {props.brand}</li>
-    </>
-  );
+export default function Car(){
+    return (<>
+    <p className={st.bigblue}>A Big Blue Car</p>
+    </>);
 }
-
